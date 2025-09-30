@@ -1,0 +1,242 @@
+Python Music
+============
+
+FluidSynth
+----------
+
+    https://www.fluidsynth.org/documentation/
+    https://github.com/FluidSynth/fluidsynth
+
+
+mingus
+------
+
+    https://bspaans.github.io/python-mingus/index.html
+    https://github.com/bspaans/python-mingus
+
+
+logging
+-------
+
+    https://docs.python.org/3/library/logging.html#
+    https://docs.python.org/3/library/logging.html#module-logging
+    https://docs.python.org/3/library/logging.html#logging.basicConfig
+    
+    https://docs.python.org/3/howto/logging.html#logging-basic-tutorial
+    https://docs.python.org/3/howto/logging.html#logging-advanced-tutorial
+    https://docs.python.org/3/howto/logging-cookbook.html#logging-cookbook
+
+    http://docs.python.org/howto/logging-cookbook.html#logging-cookbook
+
+    https://www.datacamp.com/blog/python-best-practices-for-better-code
+    https://www.datacamp.com/tutorial/logging-in-python#log1
+
+    https://stackoverflow.com/questions/4441842/python-logging-configuration-file
+    https://stackoverflow.com/questions/6386698/how-to-write-to-a-file-using-the-logging-python-module
+
+    https://medium.com/@cyberdud3/a-step-by-step-guide-to-configuring-python-logging-with-yaml-files-914baea5a0e5
+
+
+
+Python linter support vscode
+----------------------------
+
+    pip install pylint autopep8
+        or
+    pip install ruff
+
+
+Configure VS Code Settings
+--------------------------
+
+●   Open settings (File > Preferences > Settings, or Ctrl+,).
+
+●   Search for "Python Linting" and "Python Formatting" settings.
+
+●   Enable Linting:
+
+    Ensure python.linting.enabled is set to true.
+
+●   Select Linter:
+
+    Choose your preferred linter (e.g., Pylint, Flake8, Ruff) by setting
+    python.linting.pylintEnabled, python.linting.flake8Enabled,
+    or configuring the Ruff extension.
+
+●   Select Formatter:
+
+    Set python.formatting.provider to your chosen formatter (e.g., autopep8, black, ruff).
+
+●   Format on Save:
+
+    To automatically format your code when saving, add the following to your settings.json:
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8", // or "ms-python.black", "charliermarsh.ruff"
+        "editor.formatOnSave": true
+    }
+
+    Adjust editor.defaultFormatter to match your chosen formatter.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mingus
+=========
+
+pip install mingus
+
+pip install pygame
+
+pip install fluidsynth
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+brew install fluidsynth
+
+==> Fetching downloads for: fluid-synth
+==> Downloading https://ghcr.io/v2/homebrew/core/fluid-synth/manifests/2.4.8
+############################################################################################################################################## 100.0%
+==> Fetching dependencies for fluid-synth: libogg, flac, lame, libvorbis, mpg123, opus, libsndfile and portaudio
+==> Downloading https://ghcr.io/v2/homebrew/core/libogg/manifests/1.3.6
+############################################################################################################################################## 100.0%
+==> Fetching libogg
+==> Downloading https://ghcr.io/v2/homebrew/core/libogg/blobs/sha256:2423ff6b931f0393cd314052a7328a61fdd6f1d8519b65c4dff5ab560f82c52d
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/flac/manifests/1.5.0
+############################################################################################################################################## 100.0%
+==> Fetching flac
+==> Downloading https://ghcr.io/v2/homebrew/core/flac/blobs/sha256:c9698bcebe8e99ab84adf49a347cad5a9f122c45b80622a9fe2acbaeab902545
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/lame/manifests/3.100
+############################################################################################################################################## 100.0%
+==> Fetching lame
+==> Downloading https://ghcr.io/v2/homebrew/core/lame/blobs/sha256:0ae0dcb09c908b80ffbdb1bb168674e5190d6b9ae006d5282b7ab4f06eac9f36
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libvorbis/manifests/1.3.7-1
+############################################################################################################################################## 100.0%
+==> Fetching libvorbis
+==> Downloading https://ghcr.io/v2/homebrew/core/libvorbis/blobs/sha256:c28d1e0b461a4cf6f5aee72e664ac6f5f6f3efaab44f15b91924f08474cfafe1
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mpg123/manifests/1.33.2
+############################################################################################################################################## 100.0%
+==> Fetching mpg123
+==> Downloading https://ghcr.io/v2/homebrew/core/mpg123/blobs/sha256:ef311cff7f895e6d9833813db551278279d5c9c7ce37635e3fe441c5c8d64928
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/opus/manifests/1.5.2
+############################################################################################################################################## 100.0%
+==> Fetching opus
+==> Downloading https://ghcr.io/v2/homebrew/core/opus/blobs/sha256:564c0c7f19ac41ed22baabf7c1bf2e172f81bad60ec211d03bda8eeb42ce2f1a
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libsndfile/manifests/1.2.2_1
+############################################################################################################################################## 100.0%
+==> Fetching libsndfile
+==> Downloading https://ghcr.io/v2/homebrew/core/libsndfile/blobs/sha256:2d6a8173ef41359c3da4c78a5d5eb402846e480c509b868f671b80a17726f9c4
+############################################################################################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/portaudio/manifests/19.7.0-1
+############################################################################################################################################## 100.0%
+==> Fetching portaudio
+==> Downloading https://ghcr.io/v2/homebrew/core/portaudio/blobs/sha256:8ad9f1c15a4bc9c05a9dd184b53b8f5f5d13a2458a70535bfb01e54ce4f8b4bd
+############################################################################################################################################## 100.0%
+==> Fetching fluid-synth
+==> Downloading https://ghcr.io/v2/homebrew/core/fluid-synth/blobs/sha256:b1d75ea2ed0bf7b161243fa20f9954632c6bb8faffc4f59cee5319e38773823d
+############################################################################################################################################## 100.0%
+==> Installing dependencies for fluid-synth: libogg, flac, lame, libvorbis, mpg123, opus, libsndfile and portaudio
+==> Installing fluid-synth dependency: libogg
+==> Downloading https://ghcr.io/v2/homebrew/core/libogg/manifests/1.3.6
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/2771c95e2ec94043bd81d507b7f5068b581ad45cd1d3529739b5fd47a5031fe8--libogg-1.3.6.bottle_manifest.json
+==> Pouring libogg--1.3.6.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libogg/1.3.6: 103 files, 538.2KB
+==> Installing fluid-synth dependency: flac
+==> Downloading https://ghcr.io/v2/homebrew/core/flac/manifests/1.5.0
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/089760ef9c022b15fbe3b3eaf6297c3ced28db6633ea0c868a569ae651efb325--flac-1.5.0.bottle_manifest.json
+==> Pouring flac--1.5.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/flac/1.5.0: 40 files, 1.9MB
+==> Installing fluid-synth dependency: lame
+==> Downloading https://ghcr.io/v2/homebrew/core/lame/manifests/3.100
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/31e57f3a54d6908e2c153f5eb435715208f3bd9db71e16470b553d72e051b269--lame-3.100.bottle_manifest.json
+==> Pouring lame--3.100.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/lame/3.100: 28 files, 2.2MB
+==> Installing fluid-synth dependency: libvorbis
+==> Downloading https://ghcr.io/v2/homebrew/core/libvorbis/manifests/1.3.7-1
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/68d211b8805a2fab148645c2ac8e43495e576876d6f50f0c4af5ea890730b7ea--libvorbis-1.3.7-1.bottle_manifest.json
+==> Pouring libvorbis--1.3.7.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/libvorbis/1.3.7: 158 files, 2.4MB
+==> Installing fluid-synth dependency: mpg123
+==> Downloading https://ghcr.io/v2/homebrew/core/mpg123/manifests/1.33.2
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/a55086cc563ed9c00774ac1ec06e3d55923e6994eddd17574246773c9be897c5--mpg123-1.33.2.bottle_manifest.json
+==> Pouring mpg123--1.33.2.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mpg123/1.33.2: 34 files, 2.0MB
+==> Installing fluid-synth dependency: opus
+==> Downloading https://ghcr.io/v2/homebrew/core/opus/manifests/1.5.2
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/ab70a7e8383f42047a27c0638675dbd9c3229997a01eed45d76f174664a4b607--opus-1.5.2.bottle_manifest.json
+==> Pouring opus--1.5.2.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/opus/1.5.2: 16 files, 1MB
+==> Installing fluid-synth dependency: libsndfile
+==> Downloading https://ghcr.io/v2/homebrew/core/libsndfile/manifests/1.2.2_1
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/2e97439a3a58c856a00043feceb29f382febc8542b8a0c0a31aa202b2c93ea08--libsndfile-1.2.2_1.bottle_manifest.json
+==> Pouring libsndfile--1.2.2_1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libsndfile/1.2.2_1: 55 files, 1.8MB
+==> Installing fluid-synth dependency: portaudio
+==> Downloading https://ghcr.io/v2/homebrew/core/portaudio/manifests/19.7.0-1
+Already downloaded: /Users/balbert/Library/Caches/Homebrew/downloads/2ba32ec74d5080567eae3412994e5c8bc39afcd1dacfe3a0d347d210e47c5f7e--portaudio-19.7.0-1.bottle_manifest.json
+==> Pouring portaudio--19.7.0.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/portaudio/19.7.0: 34 files, 545.9KB
+==> Installing fluid-synth
+==> Pouring fluid-synth--2.4.8.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/fluid-synth/2.4.8: 43 files, 2.9MB
+==> Running `brew cleanup fluid-synth`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> No outdated dependents to upgrade!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+https://www.schristiancollins.com/generaluser
+
+GeneralUser GS 2.0.2 w/ documentation rev. 4
+--------------------------------------------
+
+NOTE: For use with BASSMIDI 2.4.14.28 or later, FluidSynth 2.3 or later,
+KQ Sampei 1.6 or later, SpessaSynth, and apps built with these synth engines.
+
+https://drive.google.com/uc?export=download&id=1UJ1mrY2l_C_YbKeyywNUymBz7OTVzQLU
+
+
+~/.fluidsynth
+
+set synth.default-soundfont "/path/to/GeneralUser-GS.sf2"
+
+set synth.default-soundfont "/Users/balbert/Work/Python/Music/GeneralUser-GS/GeneralUser-GS.sf2"
+set synth.device-id 16
+set synth.polyphony 512
+set synth.gain 0.5
+set synth.reverb.damp 0.3
+set synth.reverb.level 0.7
+set synth.reverb.room-size 0.5
+set synth.reverb.width 0.8
+set synth.chorus.depth 3.6
+set synth.chorus.level 0.55
+set synth.chorus.nr 4
+set synth.chorus.speed 0.36
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

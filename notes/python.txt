@@ -1,0 +1,6 @@
+Pythons Notes, Shortcuts and Tricks
+===================================
+
+print("\n".join(dir(<module>)))
+
+

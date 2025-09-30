@@ -1,0 +1,79 @@
+Python Naming Conventions (PEP8)
+================================
+
+Python's naming conventions are outlined in PEP 8, the official style guide for
+Python code. Adhering to these conventions promotes readability and consistency
+across projects.
+
+Key Naming Conventions:
+
+●   Variables and Functions:
+
+    ○   Use snake_case (lowercase words separated by underscores).
+
+    ○   Example: my_variable, calculate_total.
+
+    ○   Single letter variable names like l (lowercase el), O (uppercase oh), or
+        I (uppercase eye) should be avoided due to potential confusion with
+        numbers or other characters.
+
+●   Classes:
+
+    ○   Use CapWords (also known as CamelCase), where the first letter of each
+        word is capitalized, and there are no underscores.
+
+    ○   Example: MyClass, HttpRequestHandler.
+
+    ○   Exception classes should also follow CapWords and typically end
+        with "Error" (e.g., CustomError).
+
+●   Constants (Module-Level):
+
+    ○   Use ALL_CAPS (all uppercase letters with words separated by
+        underscores).
+
+    ○   Example: MAX_RETRIES, DEFAULT_TIMEOUT.
+
+●   Modules and Packages:
+
+    ○   Use short, all-lowercase names. Underscores can be used in module names
+        if they improve readability, but are generally discouraged for package
+        names.
+
+    ○   Example: my_module.py, my_package/.
+
+●   Private Members (Variables/Methods):
+
+    ○   Prefix with a single underscore (_) to indicate that they are intended
+        for internal use within a class or module and are not part of the
+        public API.
+
+    ○   Example: _private_variable, _internal_method().
+
+●   Name Mangling (Strongly Private):
+
+    ○   Prefix with two leading underscores (__) to trigger name mangling,
+        making the name harder to access directly from outside the class. This
+        is primarily used to avoid name clashes in inheritance.
+
+    ○   Example: __private_attribute.
+
+General Guidelines:
+
+●   Descriptiveness:
+
+    Names should be clear and descriptive, reflecting their purpose.
+
+●   Consistency:
+
+    Maintain a consistent naming style throughout your codebase.
+
+●   Avoid Built-in Names:
+
+    Do not use names that clash with Python's built-in functions or keywords.
+
+●   Case Sensitivity:
+
+    Python names are case-sensitive (e.g., my_variable and My_Variable are
+    distinct).
+

@@ -1,0 +1,570 @@
+6 Python Best Practices for Better Code
+=======================================
+
+https://www.datacamp.com/blog/python-best-practices-for-better-code
+
+6 Python Best Practices for Better Code
+---------------------------------------
+
+Discover the Python coding best practices for writing best-in-class Python scripts.
+Updated Sep 19, 2024 · 13 min read
+
+Contents
+--------
+
+    •   What is PEP 8?
+
+    •   Python Best Practices
+        1. Python best practices for code quality
+        2. Python logging best practices
+        3. Python commenting best practices
+        4. Python docstring best practices
+        5. Python documentation best practices
+        6. Python virtual environment best practices
+
+    •   Python Naming Conventions
+    •   Conclusion
+    •   Python Best Practices FAQs
+
+
+Coding is the art of writing the instructions – also known as algorithms – for a
+computer to do a specific task. To communicate with computers, developers use
+programming languages.
+
+Like natural languages, such as English, Russian, or Quechua, programming
+languages comprise a specific set of syntactic and semantic rules that provide
+the basics for communication. Although natural languages are more complex,
+flexible, and dynamic, these attributes are also applicable to programming
+languages to a more limited extent.
+
+You can write even the simplest algorithm in many different ways. While some
+flexibility is desirable when developing code, it can compromise efficiency and
+effective communication, especially when multiple people are working on it.
+
+As such, readability is a critical aspect of code writing. To ensure that
+developers are on the same page, most programming languages have developed
+coding standards. These documents provide guidelines and best practices for
+producing readable, maintainable, and scalable code.
+
+In this article, we will discover the best practices for coding in Python, one
+of the most popular data science languages. The practices presented in the
+following sections are mostly based on PEP 8, the standard guide for writing
+code in Python.
+
+Check out our article or our Introduction to Python course to learn more about
+what Python is used for.
+
+
+What is PEP 8?
+--------------
+
+“Code is read much more often than it is written. Code should always be written
+ in a way that promotes readability” – Guido van Rossum, the inventor of
+ Python
+
+PEP 8 is a style guide for Python code. Written in 2001 by Guido van Rossum,
+Barry Warsaw, and Nick Coghlan, it provides a set of recommendations for
+writing more readable and consistent code. It covers everything from how to
+name variables to the maximum number of characters that a line should have.
+
+https://peps.python.org/pep-0008
+
+PEP stands for Python Enhancement Proposal. A PEP is a document that describes
+new features proposed for Python and documents aspects of Python, like design
+and style.
+
+While not mandatory, much of the Python community uses PEP 8. So it is highly
+advisable to follow the guidelines. By doing that, you will improve your
+credentials as a professional programmer.
+
+Despite the wide acceptance of PEP 8, the guidelines may not fit all particular
+scenarios. In those cases, companies often define their own conventions.
+
+
+Python Best Practices
+---------------------
+
+    1.  Python best practices for code quality
+
+        Writing readable and organized code can make a difference and boost your
+        career prospects. While coding may seem a mechanic and complex process
+        for beginners, the truth is that coding is an art.
+
+        There are many tips you can follow to increase code quality in Python.
+        Here is a list of some of the most relevant.
+
+        The indentation tyranny
+        -----------------------
+
+        Indentation refers to the spaces at the beginning of a code line. While
+        indentation in other programming languages is only a resource for
+        readability, indentation in Python is mandatory. Python uses
+        indentation to open a block of code. More precisely, 4 consecutive
+        spaces per indentation level, as shown in the following code:
+
+````````````````````````````````````````````````````````````````````````````````
+        for number in [1,2,3,4]:
+            if number % 2 == 0:
+                print(number)
+            else:
+                continue
+
+````````````````````````````````````````````````````````````````````````````````
+
+        Maximum line length
+        -------------------
+
+        PEP 8 recommends that no line should be longer than 79 characters. This
+        makes sense, as shorter lines are easier to read. Also, this length
+        allows you to have multiple files open next to one another.
+
+
+        Blank lines
+        -----------
+
+        Surround top-level function and class definitions with two blank lines.
+        A single blank line surrounds method definitions inside a class. Extra
+        blank lines may be used (sparingly) to separate groups of related
+        functions. Finally, use blank lines in functions (sparingly) to
+        indicate logical sections.
+
+
+        Use linters and autoformaters
+        -----------------------------
+
+        Code mastery takes time. Paying attention to all the details while
+        coding may be challenging and time-consuming. Fortunately, machines,
+        particularly linters and formatters, can help us ensure code quality.
+
+        Linters perform static analysis of source codes and check for semantic
+        discrepancies. Formatters are similar tools that try to restructure
+        your code spacing, line length, argument positioning, and so on to
+        ensure that your code looks consistent across different files or
+        projects. Python offers you a plethora of linters and formatters to
+        choose from.
+
+
+        Keep in mind principles
+        -----------------------
+
+        While some of the aforementioned rules are straightforward, coding is
+        often about good taste and intuition. To become a coding artist, you
+        should know some of the principles underpinning Python. A great example
+        of such principles is the Zen of Python, covered in a separate
+        article.
+
+
+    2.  Python logging best practices
+
+        Logging is a means of tracking events that happen when some software
+        runs. Especially when applications grow in size and complexity, logging
+        becomes a critical technique for developing, debugging, running, and
+        tracking performance.
+
+        The logging module has been part of Python’s Standard Library since
+        version 2.3 to address logging practices. It is the first go-to package
+        for most Python developers regarding logging and is extensively
+        described in PEP 282.
+
+        Logging is similar in spirit to a Print function. However, a print
+        function lacks a lot of information that might be useful to a
+        developer. Logging, however, can log the timestamps and line number at
+        which the error occurred. It can also log errors or any information to
+        files, sockets, etc.
+
+        To import the module, you just have to run this code:
+
+
+````````````````````````````````````````````````````````````````````````````````
+        import logging
+
+````````````````````````````````````````````````````````````````````````````````
+
+
+        Not every log message is similar. Indeed, the module provides a category
+        of logging levels according to the gravity of the message. It goes as
+        follows:
+
+        •   NOTSET (0): This means that all messages will be logged.
+
+        •   Debug (10): Useful for diagnosing issues in the code.
+
+        •   Info (20): It can be used to acknowledge that there are no bugs in
+            the code. One good use case of info-level logging is tracking the
+            progress of training a machine learning model.
+
+        •   Warning (30): Indicative of a problem that could occur in the
+            future. For example, a warning might be issued for a module that
+            might be discontinued in the future or a low-ram warning.
+
+        •   Error (40): A serious bug in the code; it could be a syntax error,
+            out-of-memory error, or exceptions.
+
+        •   Critical (50): An error due to which the program might stop
+            functioning or might exit abruptly.
+
+
+````````````````````````````````````````````````````````````````````````````````
+        import logging
+
+        logging.info('This message is just informative')
+        logging.debug('My missions is to provide information about debugging.')
+        logging.critical("A Critical Logging Message")
+
+````````````````````````````````````````````````````````````````````````````````
+
+        Having said this, below is a list of six best practices for handling
+        logging in Python.
+
+
+        Use logs instead of prints
+        --------------------------
+
+        We previously said that logs provide information in the same vein as
+        print functions. However, logs are much more powerful and can provide
+        more granular information.
+
+        Going for the Print function may be tempting, especially if you are
+        unfamiliar with logging routines, but logs will always be the safest
+        option. They are better suited to scale and handle complex
+        applications.
+
+        The web is full of guides and documentation. For example, this DataCamp
+        logging tutorial may be what you need to get started.
+
+
+        Use the logging module
+        ----------------------
+
+        This module is the go-to option for most Python developers. This means
+        that the module is well-maintained and backed by a huge community that
+        will always have an answer to your doubts.
+
+
+        Choose the logging level wisely
+        -------------------------------
+
+        The logging module comes with six different levels of messages. Each of
+        them is designed for a specific purpose. The more you stick to them,
+        the easier it will be for you and users to understand what’s happening
+        in your code.
+
+
+        Use timestamps when logging
+        ---------------------------
+
+        This is a critical feature of logs that print functions don’t have. In
+        addition to knowing where a problem appeared, it’s important to know
+        when it happened. Timestamps are your biggest allies in these
+        situations. Make sure to use the standard format to write timestamps,
+        i.e., the ISO-8601 format.
+
+
+        Empty the logging bin
+        ---------------------
+
+        Use RotatingFileHandler classes, such as the TimedRotatingFileHandler,
+        instead of FileHandler, to archive, compress, or delete old log files
+        to prevent memory space issues. These classes will clean space once a
+        size limit or a time condition is triggered.
+
+
+    3.  Python commenting best practices
+
+        Comments are very important for making annotations for future readers of
+        our code. Although it is difficult to define how the code should be
+        commented on, there are certain guidelines that we can follow:
+
+        •   Any comment that contradicts the code is worse than no comment. That
+            is why it is very important to update the code and the comments to
+            avoid creating inconsistencies.
+
+        •   Comments must be complete sentences, with the first letter
+            capitalized.
+
+        •   Try to write comments in English. Although everyone is free to write
+            their comments in the language they consider appropriate, it is
+            recommended to do so in English.
+
+        •   Ensure that your comments are clear and easily understandable to
+            other speakers of the language you are writing in.
+
+        There are two types of comments: block comments and inline comments.
+
+        A block comment explains the code that follows it. Typically, you indent
+        a block comment at the same level as the code block. Each line of a
+        block comment starts with a # and a single space, as follows:
+
+
+````````````````````````````````````````````````````````````````````````````````
+        # This is a block comment
+        print('Welcome to DataCamp!")
+
+````````````````````````````````````````````````````````````````````````````````
+
+        On the other hand, inline comments appear at the same level as code.
+        Inline comments should be separated by at least two spaces from the
+        statement. Similar to a block comment, an inline comment begins with a
+        single hash sign (#) and is followed by a space and a text string.
+
+
+````````````````````````````````````````````````````````````````````````````````
+        print ("Have you ever tried Python?") # This is an inline comment
+
+````````````````````````````````````````````````````````````````````````````````
+
+
+    4.  Python docstring best practices
+
+        A docstring is a string literal that occurs as the first statement in a
+        module, function, class, or method definition. Typically, you use a
+        documentation string to automatically generate the code documentation.
+        As such, a docstring can be accessed at run-time using the obj.__doc__
+        special attribute of that object.
+
+        For consistency, docstrings are always enclosed in triple double quotes
+        (""").
+
+        There are two forms of docstrings: one-liners and multi-line docstrings.
+        One-liners are for really obvious cases. They should really fit on one
+        line. The following example illustrates a one-line docstring in the
+        multiply() function:
+
+
+````````````````````````````````````````````````````````````````````````````````
+        def multiply(x, y):
+            """ Return the product of two numbers """
+            result = x * y
+            return result
+
+````````````````````````````````````````````````````````````````````````````````
+
+        On the other hand, a multi-line docstring can span multiple lines. Such
+        a docstring should document the script’s function, command line syntax,
+        environment variables, and files. Usage messages can be fairly
+        elaborate and should be sufficient for a new user to use the command
+        properly.
+
+
+````````````````````````````````````````````````````````````````````````````````
+        def calculate_salary(hours, price=20):
+            """ Return the salary according to the hours worked
+
+            Arguments:
+            hours: total hours investe
+            price: price of each hours worked. Minimum price is 20 dollars
+            """
+            salary = hours * price
+            return salary
+
+````````````````````````````````````````````````````````````````````````````````
+
+        A more detailed explanation of docstrings can be found in PEP257.
+
+
+    5.  Python documentation best practices
+
+        While comments are important for other developers you are working with
+        to understand your code, documentation is intended to help a community
+        of potential users learn to use your software. This is a critical step:
+        no matter how good your software is, if the documentation is not good
+        enough, or even worse, missing, people will not use it.
+
+        Including a README file is always a good practice, especially if you are
+        working on a new project. These files are normally the main entry point
+        for readers of your code and include general information for both users
+        and maintainers of the project.
+
+        While concise, the README file should explain the project's purpose, the
+        URL of the software's main source, and credit information.
+
+        Equally, you should always include a setup.py file, ensuring that the
+        software or library has been packaged and distributed with Distulils,
+        the standard for distributing Python modules.
+
+        Moreover, if your software requires other dependencies or packages to
+        run, you should include a requirements.txt file that describes the
+        dependencies needed and their versions.
+
+        Finally, you are free to add any other information you think is relevant
+        to potential users. For example, it's a good practice to provide
+        examples of how your package or functions work.
+
+
+    6.  Python virtual environment best practices
+
+        To ensure order and consistency across your data projects, creating a
+        virtual environment for every project you start is a good practice.
+
+        Virtual environments, also known as virtualenvs, help decouple and
+        isolate versions of Python and the libraries required for your project
+        and their related pip versions. This authorizes end-users to install
+        and manage their own set of software and versions independent of those
+        provided by the system.
+
+        To create virtualenvs, we need to install first the required package,
+        writing the following line of code in your terminal:
+
+
+````````````````````````````````````````````````````````````````````````````````
+        pip install virtualenv
+
+````````````````````````````````````````````````````````````````````````````````
+
+        To create a new virtualenv, the following code will make the magic. We
+        are calling the new virtualenv “new_venv”
+
+
+````````````````````````````````````````````````````````````````````````````````
+        python3 -m venv /path/to/new/virtual/environment/new_venv
+
+````````````````````````````````````````````````````````````````````````````````
+
+Python Naming Conventions
+-------------------------
+
+One of the most common mistakes among beginner Python developers is the improper
+naming of variables, classes, functions, etc. Naming conventions are critical
+elements to ensure the readability of code.
+
+PEP 8 explains the standard way of naming objects in Python. According to the
+guidelines, new modules and packages (including third-party frameworks) should
+be written to these standards, but internal consistency is preferred where an
+existing library has a different style.
+
+You should avoid using names that are too general or too worldly. Also,
+identifiers used in the standard library must be ASCII compatible, as described
+in PEP 3131.
+
+````````````````````````````````````````````````````````````````````````````````
+    # Bad naming:
+    data_structure, ríos_españa, dictionary_with_countries_and_capitals
+
+    # Good naming:
+    user_profile, stop_words, global_emissions_df
+
+````````````````````````````````````````````````````````````````````````````````
+
+Below is a list of the naming conventions for the most common objects in
+Python.
+
+    •   Packages and modules
+
+        ▪   Package and module names should be all lowercase
+
+        ▪   Underscores can only be used in the package and module name if it
+            improves readability.
+
+    •   Classes
+
+        ▪   Class names should follow the UpperCaseCamelCase convention
+
+        ▪   Python’s built-in classes, however, are typically lowercase words
+
+    •   Instance variables, methods, and functions
+
+        ▪   Instance variable names should be all lowercase
+
+        ▪   Use underscore to add new words to instances of variables
+
+        ▪   Non-public instance variables should begin with a single underscore
+
+    •   Constants
+
+        ▪   Constant names must be fully capitalized
+
+        ▪   Use underscore to add new words to constants
+
+        ┌────────────────────┬────────────────────┐
+        │ Identifier         │ Convention         │
+        ├────────────────────┼────────────────────┤
+        │ Module             │ lowercase          │
+        ├────────────────────┼────────────────────┤
+        │ Class              │ CapWords           │
+        ├────────────────────┼────────────────────┤
+        │ Functions          │ lowercase          │
+        ├────────────────────┼────────────────────┤
+        │ Methods            │ lowercase          │
+        ├────────────────────┼────────────────────┤
+        │ Type variables     │ CapWords           │
+        ├────────────────────┼────────────────────┤
+        │ Constants          │ UPPERCASE          │
+        ├────────────────────┼────────────────────┤
+        │ Package            │ lowercase          │
+        └────────────────────┴────────────────────┘
+
+
+
+Conclusion
+----------
+
+Mastering Python best practices is essential for writing clean, efficient, and
+maintainable code. By following guidelines on code quality, logging,
+commenting, and documentation, and using tools like virtual environments, you
+can ensure that your projects are easier to manage, collaborate on, and scale.
+
+As you continue to improve your Python skills, consider exploring more in-depth
+learning resources to deepen your understanding of Python and its wide range of
+applications. If you’re looking for structured guidance, check out these
+resources:
+
+    •   How to Learn Python: A Guide to Becoming an Expert – This expert guide
+        will help you navigate the learning process, offering tips and
+        techniques for mastering Python.
+
+    •   Introduction to Python for Developers – Perfect for developers looking
+        to get started with Python, this course covers the core concepts and
+        features of the language in a practical, hands-on way.
+
+    •   Introduction to Data Science in Python – Once you're comfortable with
+        Python, dive into data science with this beginner-friendly course. It
+        covers essential libraries and techniques for working with data in
+        Python.
+
+
+Python Best Practices FAQs
+--------------------------
+
+Why following coding best practices is important?
+
+    To ensure readability, quality code, and scalability during software
+    development activities.
+
+
+What is a virtual environment?
+
+    A virtual environment is a tool that separates the dependencies of different
+    projects by creating a separate isolated environment for each project.
+
+
+What is PEP 8?
+
+    It is a document that provides standard guidelines and best practices on how
+    to write Python code.
+
+
+What is indentation?
+
+    Indentation refers to the spaces at the beginning of a code line. Python
+    uses indentation to indicate a block of code.
+
+
+What is the Zen of Python?
+
+    The Zen of Python is a collection of 19 "guiding principles" for writing
+    computer programs that influence the design of the Python programming
+    language.
+
+
+What is a docstring?
+
+    A Python docstring is a string used to document a Python module, class,
+    function, or method, so programmers can understand what it does without
+    having to read the details of the implementation.
+
+
+How many types of comments are common in Python?
+
+    There are two types of comments: block comments and inline comments.
+
+
