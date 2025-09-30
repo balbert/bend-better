@@ -3,7 +3,7 @@ import logging
 
 # Configure the logger to write to a file
 logging.basicConfig(
-    filename='app.log', # Specify the log file name
+    filename='logs/app.log', # Specify the log file name
     level=logging.INFO, # Set the logging level (e.g., INFO, DEBUG, WARNING, ERROR, CRITICAL)
     format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d :: %(message)s' # Define the log message format
     # format='%(asctime)s :: %(levelname)s :: %(message)s' # Define the log message format

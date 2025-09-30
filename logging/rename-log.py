@@ -65,36 +65,3 @@ if os.path.exists(new_filename):
 # Clean up created log files
 os.remove(initial_filename) if os.path.exists(initial_filename) else None
 os.remove(new_filename) if os.path.exists(new_filename) else None
-
-
-# import os
-
-# # Define the old and new file names
-# old_file_name = "original_file.txt"
-# new_file_name = "renamed_file.txt"
-#
-# try:
-#     # Rename the file
-#     os.rename(old_file_name, new_file_name)
-#     print(f"File '{old_file_name}' successfully renamed to '{new_file_name}'.")
-# except FileNotFoundError:
-#     print(f"Error: The file '{old_file_name}' was not found.")
-# except PermissionError:
-#     print(f"Error: Permission denied to rename '{old_file_name}'.")
-# except OSError as e:
-#     print(f"An unexpected error occurred: {e}")
-
-
-# import shutil
-
-# source_path = 'path/to/source_file.txt'
-# destination_path = 'path/to/destination_file.txt'
-#
-# try:
-#     shutil.copyfile(source_path, destination_path)
-#     print(f"File '{source_path}' copied to '{destination_path}' successfully.")
-# except FileNotFoundError:
-#     print(f"Error: Source file '{source_path}' not found.")
-# except Exception as e:
-#     print(f"An error occurred: {e}")
-#

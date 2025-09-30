@@ -4,8 +4,9 @@ import shutil
 import time
 
 # The name and path to the configuration file
-loggerConfigFileName = "logging/logging.ini"
+LOGGING_CONFIG_FILENAME = "logging/logging.ini"
 
+''' function main() '''
 def main():
     quote = """
     A person needs new experiences. It jars something deep inside, allowing them to grow.
@@ -14,7 +15,9 @@ def main():
     """
     print(quote)
 
-def listloggers():
+
+''' function listLoggers1() '''
+def listLoggers1():
     rootlogger = logging.getLogger()
     print(rootlogger)
     for h in rootlogger.handlers:
@@ -26,7 +29,9 @@ def listloggers():
             for h in lgr.handlers:
                 print('     %s' % h)
 
-def listloggers2():
+
+''' function listLoggers2() '''
+def listLoggers2():
     logger = logging.getLogger()
     print(f"logger -> name: {logger.name}, logger: {logger}")
     for hndlr in logger.handlers:
@@ -46,14 +51,10 @@ def listloggers2():
                 print(f"Enumerate dictionary for handler -> {hndl.get_name()}")
                 for i, key in enumerate(hndl.__dict__):
                     print(f"  index: {i}, {key} :: {hndl.__dict__[key]}")
-
-                    # if key == "baseFilename":
-                    #     print("--->Gotcha")
-                    #     hndl.__dict__['baseFilename'] = "/tmp/dummy.log"
-                    #     print(hndl.__dict__['baseFilename'])
-                    #     break
                 print()
 
+
+''' function get_FileHandler() '''
 def get_FileHandler(name):
     for nm, lgr in logging.Logger.manager.loggerDict.items():
         print(f"logger: {lgr}")
@@ -65,13 +66,13 @@ def get_FileHandler(name):
                     if hndlr.name == name:
                         return hndlr 
 
-def rename_logfile(hndlr, old_name, new_name, rename=True):
-    # 1. Close the existing handler
-    #
+
+''' function renameLogFile() '''
+def renameLogFile(hndlr, old_name, new_name, rename=True):
+    # Close the existing handler
     hndlr.close()
 
-    # 1.5a Rename old file to new name
-    #
+    # Rename/Copy old file to new name
     if rename:
         try:
             os.rename(old_name, new_name)
@@ -81,10 +82,7 @@ def rename_logfile(hndlr, old_name, new_name, rename=True):
             print(f"Error: Permission denied to rename '{old_name}'.")
         except OSError as e:
             print(f"An unexpected error occurred: {e}")
-
-    # 1.5b Copy old file to new name
-    #
-    if not rename:
+    else: # copy
         try:
             shutil.copy(old_name, new_name)
         except FileNotFoundError:
@@ -92,52 +90,40 @@ def rename_logfile(hndlr, old_name, new_name, rename=True):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    # 2. Update the baseFilename attribute
-    #
-    #    It's good practice to get the absolute path for consistency
-    #
+    # Update the baseFilename attribute
+    # It's good practice to get the absolute path for consistency
     hndlr.baseFilename = os.path.abspath(new_name)
 
-    # 3. Re-open the handler (this implicitly happens when it's used again)
-    #
-    #    If you need to force it open immediately, you could re-add it to
-    #    the logger (though updating baseFilename is usually sufficient
-    #    for subsequent logging)
-    #
-    #    For a clean re-initialization, you might remove and re-add:
-    #
+    # Re-open the handler (this implicitly happens when it's used again)
+  
+    # If you need to force it open immediately, you could re-add it to
+    # the logger. Though updating "baseFilename" is usually sufficient
+    # for subsequent logging
+
+    # For a clean re-initialization, you might remove and re-add:
     logger.removeHandler(handler)
     logger.addHandler(handler)
 
-    # Clean up created log files
-    # os.remove(old_name) if os.path.exists(old_name) else None
+    # Clean up old log file
+    os.remove(old_name) if os.path.exists(old_name) else None
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# MAIN
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if __name__ == '__main__':
+
     # Configure the logger
-    logging.config.fileConfig(os.path.normpath(loggerConfigFileName))
+    logging.config.fileConfig(os.path.normpath(LOGGING_CONFIG_FILENAME))
 
     logger = logging.getLogger('Admin_Client')
     logger.info("This is the first log message in the initial file.")
 
-    # print(f"handlers: {logging.getHandlerNames()}")
-    # handler = logging.getHandlerByName("fileHandler")
-    # print(f"handler: {handler}")
-    # name = handler.get_name()
-    # print(f"handler name: {name}")
-    
-    #handler.set_name("/tmp/dummy")
-
-    # for k,v in logging.Logger.manager.loggerDict.items():
-    #     print('+ [%s] {%s} ' % (str.ljust( k, 20), str(v.__class__)[8:-2]) )
-    #     if not isinstance(v, logging.PlaceHolder):
-    #         for h in v.handlers:
-    #             print('     +++',str(h.__class__)[8:-2] )
-
-    listloggers2()
+    listLoggers2()
 
     handler = get_FileHandler("fileHandler")
 
-    # /mnt/c/IAS_Projects/Work/Python/music/logs/python_2025-09-26_18:29:46.log
+    # /mnt/c/IAS_Projects/Work/Python/music/logs/dummy_2025-09-26_18:29:46.log
     old_name = handler.baseFilename
     directory, filename = os.path.split(old_name)
     print(f"Directory: {directory}, Filename: {filename}")
@@ -146,20 +132,20 @@ if __name__ == '__main__':
     #new_name = directory + '/my-app_' + time.strftime("%Y-%m-%d") + '.log'
     new_name = directory + '/my-app_' + time.strftime("%Y-%m-%d_%H:%M:%S") + '.log'
 
-    rename_logfile(handler, old_name, new_name)
+    renameLogFile(handler, old_name, new_name)
 
     # Admin_Client: The name of a logger defined in the config file
     # Create the logger if necessary
-    my_logger = logging.getLogger('Admin_Client')
+    logger = logging.getLogger('Admin_Client')
 
-    msg='There can be only one!'
+    msg = 'There can be only one!'
 
     print()
-    my_logger.debug(msg)
-    my_logger.info(msg)
-    my_logger.warning(msg)
-    my_logger.error(msg)
-    my_logger.critical(msg)
+    logger.debug(msg)
+    logger.info(msg)
+    logger.warning(msg)
+    logger.error(msg)
+    logger.critical(msg)
     print()
 
     # Shut down the logger
