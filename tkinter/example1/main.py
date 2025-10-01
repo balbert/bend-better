@@ -24,7 +24,6 @@ import time
 import random
 
 import tkinter as tk
-from tkinter import ttk
 
 LOGGING_CONFIG_FILE_NAME = "tkinter/example1/logging.ini"
 LOGGING_LOGGER_NAME = "client"
@@ -32,8 +31,11 @@ LOGGING_FILE_HANDLER_NAME = "file"
 LOGGING_FILE_NAME = "example1"
 
 ''' function clicked() - display text when button is clicked '''
-def clicked(label):
-    print("Here I am")
+def clicked1(label):
+    """
+    This function will be called when the button is clicked.
+    """
+    #print("Here I am")
     label.configure(text = "I just got clicked")
 
 ''' function test1() '''
@@ -43,7 +45,7 @@ def test1():
 
     # Root window title and dimension
     root.title("Welcome to GeekForGeeks")
-    # Set geometry (widthxheight)
+    # Set geometry (width x height)
     root.geometry('350x200')
 
     # All widgets will be here
@@ -53,18 +55,21 @@ def test1():
     lbl.grid()
 
     # Button widget with red color text inside
-    btn = tk.Button(root, text = "Click me", fg = "red", command=clicked(lbl))
+    btn = tk.Button(root, text = "Click me", fg = "red", command = lambda: clicked1(lbl))
 
     # Set Button grid
-    btn.grid(column=1, row=0)
+    btn.grid(column = 1, row = 0)
     
     # Execute Tkinter
     root.mainloop()
 
 ''' function clicked() - display user text when button is clicked '''
-def clicked(txt, lbl):
-    res = "You wrote" + txt.get()
-    lbl.configure(text=res)
+def clicked2(txt, lbl):
+    """
+    This function will be called when the button is clicked.
+    """
+    res = "You wrote: " + txt.get()
+    lbl.configure(text = res)
 
 ''' function test2() '''
 def test2():
@@ -73,21 +78,58 @@ def test2():
 
     # Root window title and dimension
     root.title("Welcome to GeekForGeeks")
-    # Set geometry(widthxheight)
-    root.geometry('350x200')
+    # Set geometry(width x height)
+    root.geometry('400x200')
 
     # Adding a label to the root window
-    lbl = tk.Label(root, text="Are you a Geek?")
-    lbl.grid()
+    lbl1 = tk.Label(
+        root, 
+        padx=10, pady=10, 
+        text="Are you a Geek?"
+        )
+    
+    lbl1.grid(
+        column=0, row=0, 
+        padx=10, pady=10
+        )
 
     # Adding Entry Field
-    txt = tk.Entry(root, width=10)
-    txt.grid(column=1, row=0)
+    txt1 = tk.Entry(
+        root, 
+        width=10
+        )
+    
+    txt1.grid(
+        column=1, row=0, 
+        padx=10, pady=10
+        )
 
     # Button widget with red color text inside
-    btn = tk.Button(root, text="Click me", fg="red", command=clicked(txt, lbl))
-    # Set Button Grid
-    btn.grid(column=2, row=0)
+    btn1 = tk.Button(
+        root,
+        padx=10, pady=10,
+        width=10,
+        text="Click me",
+        fg="red",
+        command = lambda: clicked2(txt1, lbl2)
+        )
+
+    btn1.grid(
+        column=2, row=0, 
+        padx=10, pady=10
+        )
+
+    # Adding a label to the root window
+    lbl2 = tk.Label(
+        root, 
+        padx=10, pady=10, 
+        text="your entry here"
+        )
+    
+    lbl2.grid(
+        column=0, row=1, columnspan=3, 
+        padx=10, pady=10
+        )
 
     # Execute Tkinter
     root.mainloop()
