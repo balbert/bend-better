@@ -17,9 +17,9 @@ class Canvas(master=None, cnf={}, **kw)
     background=
     bg=
 
-    Specifies the normal background colour to use when displaying the widget.
-    The given value may be any valid Tk colour. The default value is the
-    platform default background colour.
+    Specifies the normal background color to use when displaying the widget.
+    The given value may be any valid Tk color. The default value is the
+    platform default background color.
 
     borderwidth=
     bd=
@@ -57,14 +57,14 @@ class Canvas(master=None, cnf={}, **kw)
 
     highlightbackground=
 
-    Specifies the colour to use as a border highlight when the widget does not
-    have focus. The given value may be any valid Tk colour. The default value
-    is the platform default background colour.
+    Specifies the color to use as a border highlight when the widget does not
+    have focus. The given value may be any valid Tk color. The default value
+    is the platform default background color.
 
     highlightcolor=
 
-    Specifies the colour to use as a border highlight when the widget has focus.
-    The given value may be any valid Tk colour. The default values are as
+    Specifies the color to use as a border highlight when the widget has focus.
+    The given value may be any valid Tk color. The default values are as
     follows:
 
         ┌──────────┬───────────────────────────────────┐
@@ -92,8 +92,8 @@ class Canvas(master=None, cnf={}, **kw)
 
     insertbackground=
 
-    Specifies the colour to use as background in the area covered by the
-    insertion cursor. The given value may be any valid Tk colour. This colour
+    Specifies the color to use as background in the area covered by the
+    insertion cursor. The given value may be any valid Tk color. This color
     will normally override either the normal background for the widget (or the
     selection background if the insertion cursor happens to fall in the
     selection). The default values are as follows:
@@ -153,8 +153,8 @@ class Canvas(master=None, cnf={}, **kw)
 
     selectbackground=
 
-    Specifies the background colour to use when displaying selected items. The
-    given value may be any valid Tk colour. The default values are as follows:
+    Specifies the background color to use when displaying selected items. The
+    given value may be any valid Tk color. The default values are as follows:
 
         ┌──────────┬───────────────────────────────────┐
         │  MacOS   │ platform default selection color  │
@@ -172,8 +172,8 @@ class Canvas(master=None, cnf={}, **kw)
 
     selectforeground=
 
-    Specifies the foreground colour to use when displaying selected items. The
-    given value may be any valid Tk colour. The default values are as follows:
+    Specifies the foreground color to use when displaying selected items. The
+    given value may be any valid Tk color. The default values are as follows:
 
         ┌──────────┬───────────────────────────────────────┐
         │  MacOS   │ platform default selection text color │
@@ -455,9 +455,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour to be used to fill arc’s area in its normal, active
+        Specifies the color to be used to fill arc’s area in its normal, active
         and disabled states (correspondingly). The given value may be any valid
-        Tk colour. If the value is an empty string, then the arc will not be
+        Tk color. If the value is an empty string, then the arc will not be
         filled (i.e. it will be transparent). The default value is an empty
         string.
 
@@ -487,10 +487,10 @@ class Canvas(master=None, cnf={}, **kw)
         activeoutline=
         disabledoutline=
 
-        These options specifies the colour that should be used to draw the
+        These options specifies the color that should be used to draw the
         outline of the arc in its normal, active and disabled states
-        (correspondingly). The given value may be any valid Tk colour. If
-        colour is specified as an empty string then no outline is drawn for the
+        (correspondingly). The given value may be any valid Tk color. If
+        color is specified as an empty string then no outline is drawn for the
         arc. The default values are as follows:
 
 
@@ -607,9 +607,9 @@ class Canvas(master=None, cnf={}, **kw)
         activebackground=
         disabledbackground=
 
-        Specifies the colour to use for each of the bitmap’s “0” valued pixels
+        Specifies the color to use for each of the bitmap’s “0” valued pixels
         in its normal, active and disabled states(correspondingly). The given
-        value may be any valid Tk colour. If the value is an empty string, then
+        value may be any valid Tk color. If the value is an empty string, then
         nothing is displayed where the bitmap pixels are 0; this produces a
         transparent effect. The default value is an empty string.
 
@@ -626,9 +626,9 @@ class Canvas(master=None, cnf={}, **kw)
         activeforeground=
         disabledforeground=
 
-        Specifies the colour to use for each of the bitmap’s “1” valued pixels
+        Specifies the color to use for each of the bitmap’s “1” valued pixels
         in its normal, active and disabled states(correspondingly). The given
-        value may be any valid Tk colour.
+        value may be any valid Tk color.
 
         state=
 
@@ -748,9 +748,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour used to draw the line in its normal, active and
+        Specifies the color used to draw the line in its normal, active and
         disabled states (correspondingly). The given value may be any valid Tk
-        colour. If the value is an empty string, then the line will not be
+        color. If the value is an empty string, then the line will not be
         filled (i.e. it will be transparent). The default values are as
         follows:
 
@@ -880,9 +880,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour to be used to fill oval’s area in its normal,
+        Specifies the color to be used to fill oval’s area in its normal,
         active and disabled states (correspondingly). The given value may be
-        any valid Tk colour. If the value is an empty string, then the oval
+        any valid Tk color. If the value is an empty string, then the oval
         will not be filled (i.e. it will be transparent). The default value is
         an empty string.
 
@@ -909,10 +909,10 @@ class Canvas(master=None, cnf={}, **kw)
         activeoutline=
         disabledoutline=
 
-        These options specifies the colour that should be used to draw the
+        These options specifies the color that should be used to draw the
         outline of the oval in its normal, active and disabled states
-        (correspondingly). The given value may be any valid Tk colour. If
-        colour is specified as an empty string then no outline is drawn for the
+        (correspondingly). The given value may be any valid Tk color. If
+        color is specified as an empty string then no outline is drawn for the
         oval. The default values are as follows:
 
             ┌──────────┬───────────────────────────────────┐
@@ -1016,9 +1016,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour to be used to fill polygon’s area in its normal,
+        Specifies the color to be used to fill polygon’s area in its normal,
         active and disabled states (correspondingly). The given value may be
-        any valid Tk colour. If the value is an empty string, then the oval
+        any valid Tk color. If the value is an empty string, then the oval
         will not be filled (i.e. it will be transparent). The default value is
         an empty string.
 
@@ -1051,10 +1051,10 @@ class Canvas(master=None, cnf={}, **kw)
         activeoutline=
         disabledoutline=
 
-        These options specifies the colour that should be used to draw the
+        These options specifies the color that should be used to draw the
         outline of the oval in its normal, active and disabled states
-        (correspondingly). The given value may be any valid Tk colour. If
-        colour is specified as an empty string then no outline is drawn for the
+        (correspondingly). The given value may be any valid Tk color. If
+        color is specified as an empty string then no outline is drawn for the
         oval. The default values are as follows:
 
             ┌──────────┬───────────────────────────────────┐
@@ -1197,9 +1197,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour to be used to fill rectangle’s area in its normal,
+        Specifies the color to be used to fill rectangle’s area in its normal,
         active and disabled states (correspondingly). The given value may be
-        any valid Tk colour. If the value is an empty string, then the
+        any valid Tk color. If the value is an empty string, then the
         rectangle will not be filled (i.e. it will be transparent). The default
         value is an empty string.
 
@@ -1226,10 +1226,10 @@ class Canvas(master=None, cnf={}, **kw)
         activeoutline=
         disabledoutline=
 
-        These options specifies the colour that should be used to draw the
+        These options specifies the color that should be used to draw the
         outline of the rectangle in its normal, active and disabled states
-        (correspondingly). The given value may be any valid Tk colour. If
-        colour is specified as an empty string then no outline is drawn for the
+        (correspondingly). The given value may be any valid Tk color. If
+        color is specified as an empty string then no outline is drawn for the
         rectangle. The default values are as follows:
 
 
@@ -1332,9 +1332,9 @@ class Canvas(master=None, cnf={}, **kw)
         activefill=
         disabledfill=
 
-        Specifies the colour used to draw the text in its normal, active and
+        Specifies the color used to draw the text in its normal, active and
         disabled states (correspondingly). The given value may be any valid Tk
-        colour. If the value is an empty string, then the text will not be
+        color. If the value is an empty string, then the text will not be
         filled (i.e. it will be transparent). The default values are as
         follows:
 
