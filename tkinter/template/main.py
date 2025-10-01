@@ -20,13 +20,11 @@ import os
 import shutil
 import time
 import random
-import array as arr
 
-# The name and path to the configuration file
-LOGGING_CONFIG_FILE_NAME = "tkinter/example1/logging.ini"
+LOGGING_CONFIG_FILE_NAME = "tkinter/template/logging.ini"
 LOGGING_LOGGER_NAME = "client"
 LOGGING_FILE_HANDLER_NAME = "file"
-LOGGING_FILE_NAME = "example1"
+LOGGING_FILE_NAME = "template"
 
 ''' function main() '''
 def main():
@@ -118,7 +116,7 @@ def move_logfile(handler, old_name, new_name, rename=True):
     # Close the existing handler
     handler.close()
 
-    # If the new file doesn't exists create it
+    # If the new file doesn't exist create it
     if not os.path.exists(new_name):
         # Rename/copy old file to new name
         if rename:
@@ -139,27 +137,22 @@ def move_logfile(handler, old_name, new_name, rename=True):
                 print(f"An error occurred: {e}")
 
     # Update the baseFilename attribute
-    # It's good practice to get the absolute path for consistency
     handler.baseFilename = os.path.abspath(new_name)
 
-    # Re-open the handler (this implicitly happens when it's used again)
-    # If you need to force it open immediately, you could re-add it to
-    # the logger (though updating baseFilename is usually sufficient
-    # for subsequent logging)
-    #logger.removeHandler(h)
-    #logger.addHandler(h)
-
-    # Clean up created log files
+    # Clean up old log file
     os.remove(old_name) if os.path.exists(old_name) else None
 
 
 ''' function init_logging() - initial/instantiate '''
-def init_logging(config_name, logger_name):
+def init_logging(config_name, logger_name, level=logging.INFO):
     # Configure the logger
     logging.config.fileConfig(os.path.normpath(config_name))
 
     # Open/Instantiate logfile
     logger = logging.getLogger(logger_name)
+
+    # Set the logging level
+    logger.setLevel(level)
 
     # return the logger
     return logger
@@ -210,13 +203,14 @@ def rename_logfile(handler_name, file_name, fine=False):
     ▒▒▒▒▒     ▒▒▒▒▒    ▒▒▒▒▒   ▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒    ▒▒▒▒▒ 
 
 '''                                                                                                                    
+
 if __name__ == '__main__':
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # Initialize and start logging
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    logger = init_logging(LOGGING_CONFIG_FILE_NAME, LOGGING_LOGGER_NAME)
+    logger = init_logging(LOGGING_CONFIG_FILE_NAME, LOGGING_LOGGER_NAME, logging.DEBUG)
 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # Rename log file
@@ -234,10 +228,8 @@ if __name__ == '__main__':
     # Sends some messages to the new log file
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    # logger = logging.getLogger('Admin_Client')
-
     # Create an important message
-    msg='There can be only one!'
+    msg = 'There can be only one!'
 
     logger.debug(msg)
     logger.info(msg)
@@ -259,3 +251,4 @@ if __name__ == '__main__':
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     logging.shutdown()
+
