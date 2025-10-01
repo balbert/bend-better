@@ -1,0 +1,2 @@
+https://docs.python.org/3/library/tkinter.html
+https://www.geeksforgeeks.org/python/create-first-gui-application-using-python-tkinter/
