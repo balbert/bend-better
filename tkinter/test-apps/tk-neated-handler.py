@@ -10,7 +10,7 @@ def create_button_with_args(parent, text, message):
     """
     def button_handler():
         print(message)
-    
+
     # Create a button
     button = tk.Button(parent, text=text, command=button_handler)
     return button

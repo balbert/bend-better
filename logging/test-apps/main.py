@@ -95,7 +95,7 @@ def renameLogFile(hndlr, old_name, new_name, rename=True):
     hndlr.baseFilename = os.path.abspath(new_name)
 
     # Re-open the handler (this implicitly happens when it's used again)
-  
+
     # If you need to force it open immediately, you could re-add it to
     # the logger. Though updating "baseFilename" is usually sufficient
     # for subsequent logging

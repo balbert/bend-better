@@ -4,10 +4,6 @@ import tkinter as tk
 class Gui():
     def __init__(self, root):
         self.root = root
-
-        self._step_x = 20
-        self._step_y = 20
-
         self.entry = tk.Entry(self.root)
 
         # Create a frame
@@ -34,7 +30,7 @@ class Gui():
 
         entry1 = tk.Entry(frame).grid(row=1, column=1, sticky=tk.E + tk.W)
         entry2 = tk.Entry(frame).grid(row=2, column=1, sticky=tk.E)
-        
+
         Button1 = tk.Button(frame, text="Draw").grid(row=3, column=1, sticky="we")
 
         #figure1 = self.canvas.create_rectangle(80, 80, 120, 120, fill="blue")
@@ -45,7 +41,6 @@ class Gui():
     ''' event handler - on_configure() '''
     def on_configure(self, event):
         """ Callback executed when the canvas is resized. """
-        print("In on_configure()...")
         self.create_grid()
 
     ''' function create_grid() '''
@@ -59,11 +54,11 @@ class Gui():
         height = self.canvas.winfo_height()
 
         # Draw vertical lines
-        for i in range(0, width, self._step_x):
+        for i in range(0, width, 20):
             self.canvas.create_line([(i, 0), (i, height)], tag="grid_line", fill="lightgray")
 
         # Draw horizontal lines
-        for i in range(0, height, self._step_y):
+        for i in range(0, height, 20):
             self.canvas.create_line([(0, i), (width, i)], tag="grid_line", fill="lightgray")
 
         #Grid.columnconfigure(self.root, 1, weight=1, size=200)
@@ -75,6 +70,5 @@ if __name__== '__main__':
     root.title("Harmonica - Bend Better")
 
     gui = Gui(root)
-
     root.mainloop()
 

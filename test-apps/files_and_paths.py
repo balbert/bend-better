@@ -4,7 +4,7 @@
 #    Using os.path:
 #
 #    The os.path module provides functions for path manipulation.
-#    
+#
 #    Get the filename (with extension).
 #
 #        import os

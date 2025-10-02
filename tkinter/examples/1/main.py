@@ -36,7 +36,7 @@ def clicked1(label):
     This function will be called when the button is clicked.
     """
     #print("Here I am")
-    label.configure(text = "I just got clicked")
+    label.configure(text="I just got clicked")
 
 ''' function test1() '''
 def test1():
@@ -51,14 +51,12 @@ def test1():
     # All widgets will be here
 
     # Adding a label to the root window
-    lbl = tk.Label(root, text = "Are you a Geek?")
+    lbl = tk.Label(root, text="Are you a Geek?")
     lbl.grid()
 
     # Button widget with red color text inside
-    btn = tk.Button(root, text = "Click me", fg = "red", command = lambda: clicked1(lbl))
-
-    # Set Button grid
-    btn.grid(column = 1, row = 0)
+    btn = tk.Button(root, text="Click me", fg="red", command=lambda: clicked1(lbl))
+    btn.grid(column=1, row=0)
     
     # Execute Tkinter
     root.mainloop()
@@ -69,7 +67,7 @@ def clicked2(txt, lbl):
     This function will be called when the button is clicked.
     """
     res = "You wrote: " + txt.get()
-    lbl.configure(text = res)
+    lbl.configure(text=res)
 
 ''' function test2() '''
 def test2():
@@ -111,7 +109,7 @@ def test2():
         width=10,
         text="Click me",
         fg="red",
-        command = lambda: clicked2(txt1, lbl2)
+        command=lambda: clicked2(txt1, lbl2)
         )
 
     btn1.grid(

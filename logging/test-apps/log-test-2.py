@@ -28,4 +28,3 @@ if __name__ == '__main__':
 
     # Shut down the logger
     logging.shutdown()
-    

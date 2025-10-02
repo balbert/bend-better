@@ -33,7 +33,7 @@ class Gui():
 
         entry1 = tk.Entry(frame).grid(row=1, column=1, sticky=tk.E + tk.W)
         entry2 = tk.Entry(frame).grid(row=2, column=1, sticky=tk.E)
-        
+
         Button1 = tk.Button(frame, text="Draw").grid(row=3, column=1, sticky="we")
 
         #figure1 = self.canvas.create_rectangle(80, 80, 120, 120, fill="blue")

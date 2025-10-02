@@ -29,6 +29,5 @@ class GUI(tk.Frame):
         self.submitButton.grid()
 
 if __name__ == "__main__":
-    guiFrame = GUI()    
+    guiFrame = GUI()
     guiFrame.mainloop()
-    
